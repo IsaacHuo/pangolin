@@ -1,100 +1,97 @@
-# Pangolin (Pangolin)
+# Pangolin
 
-**Pangolin** 是一个面向 AI Agent 与工具链通信的零信任安全网关。作为 MITM（中间人）代理，它通过双层分析引擎（L1 静态规则 + L2 语义判定），全面拦截并审计 Agent 与 Tool Servers 之间的 MCP (Model Context Protocol) JSON-RPC 流量。
+Pangolin 是一个面向 Multi-Agent 与 MCP 工具链的零信任安全网关与运维平台。当前仓库将三部分能力整合在一起：
 
-适用场景：MCP 工具调用审计、恶意指令拦截、LLM 越权防护、Agent 运维可视化管理。
+- Python 安全防火墙引擎（FastAPI）
+- TypeScript Gateway / CLI / 运行时工具链
+- Nuxt 运维前端（apps/pangolin-frontend）
 
-## 🎯 核心特性
+适用场景：MCP 工具调用审计、恶意指令拦截、LLM 越权防护、Agent 运维可视化、策略管理与对抗测试。
 
-- **🚀 双层防护引擎**
-  - **L1 静态分析引擎**：基于 Rust `ahocorasick-rs` 与高危正则表达式的高性能语法过滤。
-  - **L2 语义分析引擎**：基于 LLM（大语言模型）的意图识别拦截，判断隐藏在复杂指令中的越权行为。
-- **🔌 灵活的协议支持**
-  - 完全兼容 MCP (Model Context Protocol) JSON-RPC 规范。
-  - 支持多种传输层接入：SSE (Server-Sent Events)、WebSocket 以及原生的 stdio MITM 代理。
-- **📊 实时全景看板**
-  - 提供现代化的响应式 Web 仪表盘 (Vue 3 + Vite)。
-  - 支持流量实时监控、WebSocket 广播、审计日志在线查阅、以及 HITL（Human-in-the-loop）人工审核。
-- **🛡️ 审计与合规**
-  - 高性能异步 JSONL 审计日志记录。
-  - 完善的 RBAC 规则管理与细粒度的策略（Policy）配置。
+## 🎯 核心能力
+
+### 1) 防火墙与策略引擎（Python）
+
+- 双层分析：L1 (高危过滤) + L2 (语义分析)
+- 支持 MCP/LLM 请求拦截、审计日志、Dashboard 推送
+
+### 2) 网关与运行时（TypeScript）
+
+- 网关会话与鉴权（token/password）
+- 技能调用、工具注册、协议与命令行集成
+
+### 3) 运维前端（Nuxt 3 + Vuetify）
+
+- 实时控制台：Pangolin Firewall、策略页、规则页、请求追踪
+- 位置：`apps/pangolin-frontend`
+- 前后端协同，默认通过 runtimeConfig 连接 9090 后端
 
 ## 🛠️ 技术栈
 
 **后端 (Backend)**
 
-- Python 3.12+ (FastAPI, Uvicorn, Pydantic v2, ahocorasick-rs, orjson)
+- Python 3.12+ (FastAPI, Uvicorn, ahocorasick-rs)
 
 **前端 (Frontend)**
 
-- Vue 3 (Composition API) + TypeScript 5.7
-- Vite 6 + Native WebSocket
+- Nuxt 3 (Vue 3, Vite, Nitro) + Vuetify
+- 位置：`apps/pangolin-frontend`
 
 ## 📁 核心目录结构
 
 ```text
 .
-├── src/                          # Python 后端源码
-│   ├── main.py                   # FastAPI 应用入口文件
-│   ├── config.py                 # 全局环境变量配置
-│   ├── engine/                   # 双层分析引擎 (L1 静态 + L2 语义)
-│   ├── proxy/                    # 传输层适配器 (SSE, WebSocket, stdio, OpenAI)
-│   ├── routes/                   # API 路由控制器 (rules/config/dashboard 等)
-│   ├── audit/                    # 异步 JSONL 审计日志系统
-│   └── dashboard/                # WebSocket 实时广播中心
-├── frontend/                     # Vue 3 前端控制台 (独立 SPA)
-│   └── src/
-│       ├── components/           # 页面级组件 (流量、规则、引擎、测试等)
-│       └── composables/          # 全局响应式状态与逻辑抽象
-├── tests/                        # Pytest 测试用例
-│   └── red_team/                 # 红蓝对抗 (Red Team) 攻击模拟用例
-├── docs/                         # 补充文档与框架资料
-├── Makefile                      # 开发与运行核心指令
-└── pyproject.toml                # Python 依赖与版本清单
+├── apps/
+│   └── pangolin-frontend/        # 🌟 最新主前端（Nuxt 3）
+├── frontend/                     # [已废弃] 过时的 Vue 3 实验前端
+├── src/
+│   ├── main.py                   # FastAPI 入口
+│   ├── config.py                 # 环境配置（AF_*）
+│   ├── engine/                   # L1/L2 分析引擎
+│   ├── proxy/                    # 代理与会话层
+│   ├── routes/                   # API 路由 (rules/config/dashboard 等)
+│   └── dashboard/                # WS Dashboard 推送
+├── scripts/
+│   └── pangolin-dev-up.sh        # 一键拉起后端+网关+前端
+└── package.json                  # Node 脚本与依赖
 ```
 
-## 🚀 快速启动
+## 🚀 快速启动 (多终端运行)
 
-项目中后端使用 `uv`，前端使用 `npm` (或 `pnpm`) 组织，建议采用双终端本地开发。
-
-### 1. 环境准备
+### 1. 安装后端依赖并运行 (Port: 9090)
 
 ```bash
-# 激活 Python 虚拟环境与安装依赖
 uv venv .venv
 source .venv/bin/activate
 uv sync
-
-# 安装前端依赖
-cd frontend
-npm install
-cd ..
-```
-
-### 2. 启动服务
-
-**终端 A：启动后端网关 (Port: 9090)**
-
-```bash
-source .venv/bin/activate
 make dev
 ```
 
-**终端 B：启动前端开发服务器 (Port: 9091)**
+> 后端检查入口：http://127.0.0.1:9090/health
+
+### 2. 启动最新 Nuxt 前端 (Port: 3000)
+
+使用 `apps/pangolin-frontend`，此为项目核心 Dashboard 组件！
 
 ```bash
-cd frontend
-npx vite --port 9091 --host
+cd apps/pangolin-frontend
+pnpm install
+pnpm dev
 ```
 
-成功拉起后，访问入口：
+> 前端检查入口：http://localhost:3000/
 
-- **前端控制台**：[http://127.0.0.1:9091](http://127.0.0.1:9091)
-- **后端 API**：[http://127.0.0.1:9090](http://127.0.0.1:9090)
+### 3. 一键启动后端 + 网关 + 前端（根目录）
+
+在根目录下可一键调用打包好的脚本：
+
+```bash
+pnpm pangolin:dev:all
+```
 
 ## 🐳 Docker 部署（推荐用于系统验证）
 
-如果您希望在沙盒环境中全量预览或进行部署验证，可一键拉起：
+如果希望在隔离环境中验证：
 
 ```bash
 docker compose up -d --build
@@ -107,31 +104,10 @@ docker compose ps
 docker compose logs -f
 ```
 
-## ⚙️ 环境变量与配置
+## ⚠️ 关于 "Agent Firewall" 历史命名
 
-系统遵循 12-Factor 理念，所有核心配置均通过环境变量注入（参见 `.env`）。
-关键配置项参考：
-
-- `AF_LISTEN_PORT` (默认: 9090) — 防火墙服务监听端口。
-- `AF_UPSTREAM_HOST` / `AF_UPSTREAM_PORT` — 防火墙保护的下游目标 MCP Server 地址。
-- `AF_L1_ENABLED` / `AF_L2_ENABLED` — L1 静态拦截与 L2 语义分析层总开关。
-- `AF_L2_MODEL_ENDPOINT` / `AF_L2_API_KEY` — 驱动 L2 语义分析层的 LLM 接口信息。
-- `AF_AUDIT_LOG` — 审计归档日志文件路径 (默认: `./audit/firewall.jsonl`)。
-
-## 🧪 测试与安全检查
-
-```bash
-# 运行单元测试集
-make test
-
-# 执行 Red Team (红队) 攻击模拟
-make attack
-
-# 运行代码规范检测与自动格式化
-make lint
-make fmt
-```
+本项目历史上也曾探索名为 `Agent Firewall` 并在 `frontend/` 开发了一套原生 Vue SPA 面板。目前系统已全线更名为 **Pangolin** 并将前端重心切流至 `apps/pangolin-frontend/`。
 
 ## 📄 License
 
-本项目采用 [MIT License](./LICENSE) 开源协议。
+MIT
