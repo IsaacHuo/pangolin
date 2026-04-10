@@ -208,7 +208,7 @@ function emitGatewayFrame(): string {
 }
 
 async function generate() {
-  const definitions = Object.entries(ProtocolSchemas) as Array<[string, JsonSchema]>;
+  const definitions = Object.entries(ProtocolSchemas);
 
   for (const [name, schema] of definitions) {
     schemaNameByObject.set(schema as object, name);
