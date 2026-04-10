@@ -1,7 +1,7 @@
 /**
  * Common UI Components
  *
- * Reusable UI components for Agent Firewall dashboard
+ * Reusable UI components for Pangolin dashboard
  */
 
 export { default as Modal } from "./Modal.vue";

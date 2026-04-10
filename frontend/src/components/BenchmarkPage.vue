@@ -48,8 +48,8 @@
               <label>Defense Interceptor (Stage 2)</label>
               <select v-model="config.defense" class="input-field">
                 <option value="none">None (Direct Attack)</option>
-                <option value="agent-firewall-l1">Agent-Firewall L1 (Static)</option>
-                <option value="agent-firewall-l2">Agent-Firewall L2 (Semantic)</option>
+                <option value="pangolin-l1">Pangolin L1 (Static)</option>
+                <option value="pangolin-l2">Pangolin L2 (Semantic)</option>
                 <option value="jailguard">JailGuard (Perturbation Consistency)</option>
                 <option value="cider">CIDER (Intent Risk Classifier)</option>
               </select>
@@ -227,7 +227,7 @@ import { computed, ref, reactive } from 'vue'
 const config = reactive({
   model: 'deepseek/deepseek-v3.2-speciale',
   attack: 'figstep',
-  defense: 'agent-firewall-l2',
+  defense: 'pangolin-l2',
   category: 'all',
   max_cases: 24,
   dataset_path: ''

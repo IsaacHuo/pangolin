@@ -2,7 +2,7 @@
 
 ## Overview
 
-Phase 6 enhances the Agent Firewall dashboard with a comprehensive UI component library, improved theme system, and better user experience patterns.
+Phase 6 enhances the Pangolin dashboard with a comprehensive UI component library, improved theme system, and better user experience patterns.
 
 ## New Components
 

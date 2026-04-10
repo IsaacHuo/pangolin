@@ -1,5 +1,5 @@
 /**
- * Agent Firewall — State Management & API Composables
+ * Pangolin — State Management & API Composables
  */
 
 import { ref, computed, onMounted, onUnmounted } from "vue";

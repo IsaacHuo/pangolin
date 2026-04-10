@@ -36,7 +36,7 @@ from ..engine.tools.gateway_tools import GatewayToolRegistry
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
-logger = logging.getLogger("agent_firewall.routes.dashboard")
+logger = logging.getLogger("pangolin.routes.dashboard")
 
 
 
@@ -219,7 +219,7 @@ async def stream_logs(request: Request) -> StreamingResponse:
 
 @router.get("/health")
 async def health() -> dict[str, str]:
-    return {"status": "ok", "service": "agent-firewall"}
+    return {"status": "ok", "service": "pangolin"}
 
 @router.get("/api/file")
 async def serve_local_file(path: str) -> FileResponse:
@@ -328,7 +328,7 @@ async def monitor_status() -> dict[str, Any]:
         "backend": {
             "ok": True,
             "status": "healthy",
-            "service": "agent-firewall",
+            "service": "pangolin",
             "lastChecked": now_iso,
         },
         "gateway": gateway_result,

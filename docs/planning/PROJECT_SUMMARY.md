@@ -1,8 +1,8 @@
-# Agent Firewall 项目总结 (Project Summary)
+# Pangolin 项目总结 (Project Summary)
 
 ## 一、 项目概述
 
-**Agent Firewall** 是一个针对 AI Agent 通信的 **零信任安全网关 (Zero-Trust Security Gateway)**。
+**Pangolin** 是一个针对 AI Agent 通信的 **零信任安全网关 (Zero-Trust Security Gateway)**。
 它作为一个中心化的中间人 (MITM) 代理工作，核心目的是拦截、检查并管控 AI Agent 与各种工具服务器 (Tool Servers) 之间基于 MCP (Model Context Protocol) 的 JSON-RPC 流量。通过强大的双层安全防御机制（L1 静态分析 + L2 语义判定），它能有效防止恶意提示词注入 (Prompt Injection) 和越权危险操作。
 
 ## 二、 技术栈架构 (Tech Stack)

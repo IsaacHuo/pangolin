@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
 
     <div>
       <p class="text-body-2 text-medium-emphasis mb-1">
-        Agent Firewall endpoint: {{ firewallSupplementService.baseURL }}
+        Pangolin endpoint: {{ firewallSupplementService.baseURL }}
       </p>
       <p class="text-body-2 text-medium-emphasis mb-1">
         Dashboard stream: {{ firewallSupplementService.dashboardWsURL }}

@@ -45,7 +45,7 @@ graph LR
         A("AI Agents<br/>Claude/GPT-4 / User Client")
     end
     
-    A <-->|"MCP Protocol / JSON-RPC Session Stream"| B("🛡️ Agent-Firewall<br/>Zero-Trust Web/Local Security Gateway")
+    A <-->|"MCP Protocol / JSON-RPC Session Stream"| B("🛡️ Pangolin<br/>Zero-Trust Web/Local Security Gateway")
     B <-->|"Filtered Valid Traffic"| C("Tool Servers<br/>OpenClaw Gateway / Local Exec")
     
     subgraph Core ["Firewall Core Control Matrix"]
@@ -96,7 +96,7 @@ stateDiagram-v2
 
 const strategyCode = `
 mindmap
-  root((Agent Firewall 核心))
+  root((Pangolin 核心))
     Security Perimeter
       Zero-Trust Validation Standard
       Man-In-The-Middle Transparent Interception

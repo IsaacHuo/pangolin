@@ -1,5 +1,5 @@
 """
-Trace and Annotation API Routes for Agent Firewall.
+Trace and Annotation API Routes for Pangolin.
 
 This module provides REST API endpoints for managing traces and their annotations.
 Annotations allow users to add notes, highlights, and comments to specific
@@ -16,7 +16,7 @@ from src.config import get_config
 from src.models import Annotation
 from src.storage import get_storage_backend
 
-logger = logging.getLogger("agent_firewall.routes.trace")
+logger = logging.getLogger("pangolin.routes.trace")
 
 router = APIRouter(prefix="/api/v1/trace", tags=["trace"])
 

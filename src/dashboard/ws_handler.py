@@ -38,7 +38,7 @@ from fastapi import WebSocket, WebSocketDisconnect
 
 from ..models import DashboardEvent, Verdict
 
-logger = logging.getLogger("agent_firewall.dashboard")
+logger = logging.getLogger("pangolin.dashboard")
 
 # Maximum events buffered per slow client before we start dropping
 _CLIENT_BUFFER_SIZE = 256

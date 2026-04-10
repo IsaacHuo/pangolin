@@ -1,5 +1,5 @@
 [project]
-name = "openclaw-agent-firewall"
+name = "openclaw-pangolin"
 version = "2026.2.16"
 description = "Zero-Trust Agent Communication Security Monitoring & Defense System for the OpenClaw ecosystem"
 requires-python = ">=3.10"

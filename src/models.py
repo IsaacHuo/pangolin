@@ -1,5 +1,5 @@
 """
-Domain models for the Agent Firewall.
+Domain models for the Pangolin.
 
 All MCP traffic is JSON-RPC 2.0 — we model it precisely so that the
 interceptor never operates on untyped dicts. Pydantic v2 with

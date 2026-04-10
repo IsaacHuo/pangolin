@@ -46,10 +46,10 @@ const firewallApi = axios.create({
 function toErrorMessage(error: unknown): string {
   if (axios.isAxiosError(error)) {
     if (!error.response) {
-      return 'Cannot reach Agent Firewall service'
+      return 'Cannot reach Pangolin service'
     }
     const status = error.response.status
-    return `Agent Firewall API error (${status})`
+    return `Pangolin API error (${status})`
   }
   return 'Unexpected error while loading firewall supplement data'
 }

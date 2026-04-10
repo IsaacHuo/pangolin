@@ -1,5 +1,5 @@
 """
-OpenClaw Agent Firewall — Zero-Trust Agent Communication Security Gateway.
+OpenClaw Pangolin — Zero-Trust Agent Communication Security Gateway.
 
 Intercepts, analyzes, and enforces security policies on all MCP JSON-RPC
 traffic flowing between OpenClaw Agents and downstream Tool Servers.

@@ -1,5 +1,5 @@
 """
-Dataset API Routes for Agent Firewall.
+Dataset API Routes for Pangolin.
 
 This module provides REST API endpoints for managing datasets,
 which are collections of traces organized for analysis and policy testing.
@@ -16,7 +16,7 @@ from src.config import get_config
 from src.models import Dataset
 from src.storage import get_storage_backend
 
-logger = logging.getLogger("agent_firewall.routes.dataset")
+logger = logging.getLogger("pangolin.routes.dataset")
 
 router = APIRouter(prefix="/api/v1/dataset", tags=["dataset"])
 

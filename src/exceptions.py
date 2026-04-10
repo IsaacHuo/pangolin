@@ -1,5 +1,5 @@
 class FirewallException(Exception):
-    """Base exception for all Agent Firewall errors."""
+    """Base exception for all Pangolin errors."""
     pass
 
 class InterceptionError(FirewallException):
@@ -18,7 +18,7 @@ class ConfigurationError(FirewallException):
     """Raised when configuration is invalid or missing."""
     pass
 class AgentFirewallError(Exception):
-    """Base exception for all Agent Firewall errors."""
+    """Base exception for all Pangolin errors."""
     pass
 
 class InterceptionError(AgentFirewallError):

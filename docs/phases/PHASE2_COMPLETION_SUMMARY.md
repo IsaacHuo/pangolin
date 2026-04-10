@@ -116,7 +116,7 @@ frontend/src/components/TraceView/
 
 The TraceView component is designed to integrate with:
 
-1. **Agent Firewall Storage Layer** (Phase 1)
+1. **Pangolin Storage Layer** (Phase 1)
    - Reads traces from storage backend
    - Displays trace messages and metadata
    - Shows analysis results (L1, L2, Agent-Scan)

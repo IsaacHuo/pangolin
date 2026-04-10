@@ -8,7 +8,7 @@ import logging
 from fastapi.responses import JSONResponse
 
 router = APIRouter()
-logger = logging.getLogger('agent_firewall.routes.rules')
+logger = logging.getLogger('pangolin.routes.rules')
 
 
 

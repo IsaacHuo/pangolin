@@ -25,7 +25,7 @@ from src.agent_studio.storage import AgentStudioRunStore
 from src.config import get_config
 
 router = APIRouter(prefix="/api/agent-studio", tags=["agent-studio"])
-logger = logging.getLogger("agent_firewall.routes.agent_studio")
+logger = logging.getLogger("pangolin.routes.agent_studio")
 
 
 @dataclass(frozen=True)

@@ -1,5 +1,5 @@
 """
-FastAPI Application — Agent Firewall HTTP Entry Point.
+FastAPI Application — Pangolin HTTP Entry Point.
 
 This is the main application that wires together all components:
   • Transport adapters (SSE, WebSocket).
@@ -66,13 +66,14 @@ from .engine.tools.gateway_tools import GatewayToolRegistry, get_gateway_tool_re
 from .models import AuditEntry, DashboardEvent, ThreatLevel
 from .adapters.openai_adapter import OpenAIAdapter
 from .adapters.session_manager import SessionManager
-from .app_state import AppState
+from .app_state import time
+from src.app_state import AppState
 from .gateway.discovery import DEFAULT_GATEWAY_PORT, LEGACY_GATEWAY_PORT, _read_gateway_info_from_local_config, _resolve_gateway_runtime_port, _first_non_empty_env
 
 from .adapters.sse_adapter import SseAdapter, WebSocketAdapter
 from .engine.tools.skills import SkillRegistry, get_skill_registry
 
-logger = logging.getLogger("agent_firewall")
+logger = logging.getLogger("pangolin")
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -122,7 +123,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     app.state.gateway_tool_registry = get_gateway_tool_registry()
 
     logger.info(
-        "🛡️  Agent Firewall started on %s:%d → upstream %s:%d",
+        "🛡️  Pangolin started on %s:%d → upstream %s:%d",
         config.listen_host,
         config.listen_port,
         config.upstream_host,
@@ -140,7 +141,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     await state.audit_logger.stop()
     await state.session_manager.stop()
     await state.sse_adapter.close()
-    logger.info("Agent Firewall shut down gracefully")
+    logger.info("Pangolin shut down gracefully")
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -148,7 +149,7 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 # ────────────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="OpenClaw Agent Firewall",
+    title="OpenClaw Pangolin",
     description="Zero-Trust Agent Communication Security Gateway",
     version="2026.2.16",
     lifespan=lifespan,

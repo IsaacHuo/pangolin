@@ -1,8 +1,8 @@
 #!/bin/bash
-# Agent Firewall — Stop All Services (Gateway + Backend + Frontend)
+# Pangolin — Stop All Services (Gateway + Backend + Frontend)
 # Usage: ./scripts/stop-all.sh
 
-echo "🛡️  Agent Firewall — Stopping All Services"
+echo "🛡️  Pangolin — Stopping All Services"
 echo "============================================"
 
 # Stop Gateway (port 18789)

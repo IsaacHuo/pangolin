@@ -1,4 +1,4 @@
-# Contributing to Agent Firewall
+# Contributing to Pangolin
 
 ## Development Setup
 

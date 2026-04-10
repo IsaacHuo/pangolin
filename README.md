@@ -1,6 +1,6 @@
-# Agent Firewall (Pangolin)
+# Pangolin (Pangolin)
 
-**Agent Firewall** 是一个面向 AI Agent 与工具链通信的零信任安全网关。作为 MITM（中间人）代理，它通过双层分析引擎（L1 静态规则 + L2 语义判定），全面拦截并审计 Agent 与 Tool Servers 之间的 MCP (Model Context Protocol) JSON-RPC 流量。
+**Pangolin** 是一个面向 AI Agent 与工具链通信的零信任安全网关。作为 MITM（中间人）代理，它通过双层分析引擎（L1 静态规则 + L2 语义判定），全面拦截并审计 Agent 与 Tool Servers 之间的 MCP (Model Context Protocol) JSON-RPC 流量。
 
 适用场景：MCP 工具调用审计、恶意指令拦截、LLM 越权防护、Agent 运维可视化管理。
 

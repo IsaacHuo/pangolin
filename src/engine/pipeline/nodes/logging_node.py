@@ -11,7 +11,7 @@ import structlog
 from src.engine.pipeline.nodes import timed_node
 from src.engine.pipeline.state import PipelineState
 
-logger = structlog.get_logger("agent_firewall.pipeline.logging")
+logger = structlog.get_logger("pangolin.pipeline.logging")
 
 @timed_node("logging")
 async def logging_node(state: PipelineState) -> PipelineState:

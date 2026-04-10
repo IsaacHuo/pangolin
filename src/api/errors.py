@@ -37,7 +37,7 @@ from src.exceptions import (
     BufferOverflowError
 )
 
-logger = logging.getLogger("agent_firewall.errors")
+logger = logging.getLogger("pangolin.errors")
 
 def register_exception_handlers(app: FastAPI) -> None:
     @app.exception_handler(InterceptionError)

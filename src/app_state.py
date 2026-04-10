@@ -14,7 +14,7 @@ from .adapters.openai_adapter import OpenAIAdapter
 from .adapters.session_manager import SessionManager
 from .models import DashboardEvent, AuditEntry
 
-logger = logging.getLogger("agent_firewall")
+logger = logging.getLogger("pangolin")
 
 
 class AppState:

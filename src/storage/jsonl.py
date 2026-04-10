@@ -1,5 +1,5 @@
 """
-JSONL Storage Backend for Agent Firewall.
+JSONL Storage Backend for Pangolin.
 
 This is the default, lightweight storage backend that uses append-only
 JSONL (JSON Lines) files. Each line is a complete JSON object representing
@@ -32,7 +32,7 @@ from typing import Any
 
 from .base import StorageBackend
 
-logger = logging.getLogger("agent_firewall.storage.jsonl")
+logger = logging.getLogger("pangolin.storage.jsonl")
 
 
 class JsonlStorage(StorageBackend):

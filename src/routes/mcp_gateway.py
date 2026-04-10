@@ -7,7 +7,7 @@ from ..app_state import AppState
 from ..models import JsonRpcRequest, DashboardEvent
 import uuid
 
-logger = logging.getLogger("agent_firewall.routes")
+logger = logging.getLogger("pangolin.routes")
 router = APIRouter()
 
 @router.get("/api/mcp/tools")

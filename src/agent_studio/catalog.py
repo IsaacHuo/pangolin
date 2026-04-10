@@ -19,7 +19,7 @@ except Exception:
     yaml = None
 
 
-logger = logging.getLogger("agent_firewall.agent_studio.catalog")
+logger = logging.getLogger("pangolin.agent_studio.catalog")
 
 
 @dataclass(frozen=True)

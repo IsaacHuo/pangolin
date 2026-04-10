@@ -557,7 +557,7 @@ function normalizeMonitorPayload(payload: unknown): MonitorPayload {
   const now = new Date().toISOString()
   if (!payload || typeof payload !== 'object') {
     return {
-      backend: { ok: false, status: 'unknown', service: 'agent-firewall', lastChecked: now },
+      backend: { ok: false, status: 'unknown', service: 'pangolin', lastChecked: now },
       gateway: {
         configured: false,
         status: 'unknown',
@@ -581,7 +581,7 @@ function normalizeMonitorPayload(payload: unknown): MonitorPayload {
     backend: {
       ok: Boolean(backend.ok),
       status: typeof backend.status === 'string' ? backend.status : 'unknown',
-      service: typeof backend.service === 'string' ? backend.service : 'agent-firewall',
+      service: typeof backend.service === 'string' ? backend.service : 'pangolin',
       lastChecked: typeof backend.lastChecked === 'string' ? backend.lastChecked : now,
     },
     gateway: {

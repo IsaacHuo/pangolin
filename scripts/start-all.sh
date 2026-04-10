@@ -1,5 +1,5 @@
 #!/bin/bash
-# Agent Firewall — Start All Services (Backend + Frontend + Gateway)
+# Pangolin — Start All Services (Backend + Frontend + Gateway)
 # Usage: ./scripts/start-all.sh
 
 set -e
@@ -145,7 +145,7 @@ is_repo_gateway_process() {
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
 
-echo "🛡️  Agent Firewall — Starting All Services"
+echo "🛡️  Pangolin — Starting All Services"
 echo "============================================"
 
 # Detect Upstream Gateway Port
@@ -282,7 +282,7 @@ else
             gateway_cmd+=(--token "$GATEWAY_TOKEN")
         fi
 
-        "${gateway_cmd[@]}" > /tmp/agent-firewall-gateway.log 2>&1 &
+        "${gateway_cmd[@]}" > /tmp/pangolin-gateway.log 2>&1 &
         GATEWAY_PID=$!
         echo "   Gateway PID: $GATEWAY_PID"
 
@@ -294,13 +294,13 @@ else
             sleep 1
         done
         if ! lsof -ti :18789 > /dev/null 2>&1; then
-            echo "   ⚠️  Gateway failed to start. Check /tmp/agent-firewall-gateway.log"
+            echo "   ⚠️  Gateway failed to start. Check /tmp/pangolin-gateway.log"
             echo "   Continuing without gateway..."
         else
             if [ -n "$GATEWAY_TOKEN" ] && probe_gateway_auth "$GATEWAY_TOKEN" 18789; then
                 echo "   ✅ Gateway healthy (auth probe passed)"
             else
-                echo "   ⚠️  Gateway started but auth probe failed. Check /tmp/agent-firewall-gateway.log"
+                echo "   ⚠️  Gateway started but auth probe failed. Check /tmp/pangolin-gateway.log"
             fi
         fi
     fi

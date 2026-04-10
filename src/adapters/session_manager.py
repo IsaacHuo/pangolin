@@ -28,7 +28,7 @@ import time
 from ..config import FirewallConfig
 from ..models import SessionContext
 
-logger = logging.getLogger("agent_firewall.session")
+logger = logging.getLogger("pangolin.session")
 
 
 class SessionManager:

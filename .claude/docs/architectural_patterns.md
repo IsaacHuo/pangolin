@@ -1,6 +1,6 @@
 # Architectural Patterns
 
-This document describes the design decisions, conventions, and patterns used throughout the Agent Firewall codebase.
+This document describes the design decisions, conventions, and patterns used throughout the Pangolin codebase.
 
 ## Core Design Principles
 
@@ -172,7 +172,7 @@ This document describes the design decisions, conventions, and patterns used thr
 **Implementation:**
 
 - `App.vue:2` — `:data-theme="theme"` attribute
-- localStorage key: `agent-firewall-theme`
+- localStorage key: `pangolin-theme`
 - CSS variables scoped by `[data-theme="dark"]`
 
 **Benefits:**

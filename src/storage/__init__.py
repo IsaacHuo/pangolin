@@ -1,5 +1,5 @@
 """
-Storage module for Agent Firewall.
+Storage module for Pangolin.
 
 Provides unified storage abstraction with multiple backends:
 - JSONL: Lightweight, append-only (default)

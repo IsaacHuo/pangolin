@@ -12,7 +12,7 @@ from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import StreamingResponse
 from ..app_state import AppState
 
-logger = logging.getLogger("agent_firewall.routes")
+logger = logging.getLogger("pangolin.routes")
 router = APIRouter()
 
 
@@ -912,8 +912,8 @@ async def _benchmark_analyze_prompt(
     defense: str,
 ) -> dict[str, Any]:
     l1_result = s.static_analyzer.analyze(prompt)
-    run_l1_guard = defense in {"agent-firewall-l1", "agent-firewall-l2"}
-    run_l2_guard = defense == "agent-firewall-l2"
+    run_l1_guard = defense in {"pangolin-l1", "pangolin-l2"}
+    run_l2_guard = defense == "pangolin-l2"
 
     l1_blocked = run_l1_guard and l1_result.threat_level in (ThreatLevel.HIGH, ThreatLevel.CRITICAL)
     l2_confidence = 0.0
@@ -1031,8 +1031,8 @@ async def benchmark_run(request: Request) -> StreamingResponse:
     supported_defenses = frozenset(
         {
             "none",
-            "agent-firewall-l1",
-            "agent-firewall-l2",
+            "pangolin-l1",
+            "pangolin-l2",
             "jailguard",
             "cider",
         }
@@ -1131,7 +1131,7 @@ async def benchmark_run(request: Request) -> StreamingResponse:
                 attack_method = _benchmark_to_text(metadata.get("attack_method") or attack)
 
                 analysis_defense = (
-                    defense if defense in {"agent-firewall-l1", "agent-firewall-l2"} else "none"
+                    defense if defense in {"pangolin-l1", "pangolin-l2"} else "none"
                 )
                 analysis = await _benchmark_analyze_prompt(s, prompt, analysis_defense)
 

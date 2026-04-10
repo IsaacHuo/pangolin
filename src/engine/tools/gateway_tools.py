@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-logger = logging.getLogger("agent-firewall.gateway-tools")
+logger = logging.getLogger("pangolin.gateway-tools")
 
 
 @dataclass(frozen=True)

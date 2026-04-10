@@ -1,8 +1,8 @@
 """
-Agent-Scan Integration Layer for Agent Firewall.
+Agent-Scan Integration Layer for Pangolin.
 
 This module integrates Snyk's agent-scan security detection capabilities
-into the Agent Firewall's policy engine. It provides:
+into the Pangolin's policy engine. It provides:
 
 1. Tool-level security analysis (Issue Codes E001-E006, W001-W013)
 2. Toxic Flow detection (TF001, TF002)
@@ -10,7 +10,7 @@ into the Agent Firewall's policy engine. It provides:
 4. Caching mechanism to avoid redundant scans
 
 Architecture:
-    Agent Firewall Interceptor
+    Pangolin Interceptor
            ↓
     L1 Static Analysis (Aho-Corasick)
            ↓
@@ -30,7 +30,7 @@ from typing import Any
 
 from ..models import AgentScanResult, Issue, ScalarToolLabels, ToxicFlow
 
-logger = logging.getLogger("agent_firewall.agent_scan")
+logger = logging.getLogger("pangolin.agent_scan")
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -40,7 +40,7 @@ logger = logging.getLogger("agent_firewall.agent_scan")
 
 class AgentScanAnalyzer:
     """
-    Integrates agent-scan security analysis into Agent Firewall.
+    Integrates agent-scan security analysis into Pangolin.
 
     This analyzer can operate in two modes:
     1. Local mode: Uses built-in pattern matching (fast, no API calls)

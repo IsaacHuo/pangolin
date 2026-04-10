@@ -4,7 +4,7 @@ Phase 6 focuses on reducing repository sprawl without dropping production capabi
 
 ## Why not delete directly
 
-Directories such as extensions/agent-firewall still have many live references in runtime docs and commands. Deleting first would break onboarding and local operations.
+Directories such as extensions/pangolin still have many live references in runtime docs and commands. Deleting first would break onboarding and local operations.
 
 ## Phase 6 approach
 
@@ -30,7 +30,7 @@ pnpm phase6:audit:legacy:strict
 
 The audit reports references to these legacy paths:
 
-- extensions/agent-firewall
+- extensions/pangolin
 - ai-protector-main
 - promptfoo-main
 - pangolin/

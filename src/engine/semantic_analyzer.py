@@ -32,7 +32,7 @@ import httpx
 from ..config import FirewallConfig
 from ..models import ThreatLevel
 
-logger = logging.getLogger("agent_firewall.l2")
+logger = logging.getLogger("pangolin.l2")
 
 
 # ────────────────────────────────────────────────────────────────────

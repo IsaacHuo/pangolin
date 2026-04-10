@@ -153,9 +153,9 @@ The component uses CSS custom properties for theming:
 }
 ```
 
-## Integration with Agent Firewall
+## Integration with Pangolin
 
-The TraceView component integrates with Agent Firewall's storage layer:
+The TraceView component integrates with Pangolin's storage layer:
 
 ```typescript
 import { TraceView } from '@/components/TraceView'

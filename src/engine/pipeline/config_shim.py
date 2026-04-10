@@ -2,7 +2,7 @@ import logging
 
 from src.config import FirewallConfig, get_config
 
-logger = logging.getLogger("agent_firewall.shim")
+logger = logging.getLogger("pangolin.shim")
 
 class SettingsShim:
     def __init__(self, firewall_config: FirewallConfig):

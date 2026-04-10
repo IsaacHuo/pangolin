@@ -119,7 +119,7 @@
               <path d="M12 22s8-4 8-10V8l-8-3-8 3v4c0 6 8 10 8 10z" transform="translate(12, 10) scale(1.2)"/>
             </svg>
           </div>
-          <h3>Agent Firewall Chat Lab</h3>
+          <h3>Pangolin Chat Lab</h3>
           <p>Test attack payloads against the firewall's dual-layer analysis engine.</p>
           <div class="quick-actions">
             <button v-for="sample in sampleAttacks" :key="sample.name" class="quick-btn" @click="useSample(sample)">
@@ -278,7 +278,7 @@
           ref="inputEl"
           v-model="inputMessage"
           class="msg-input"
-          placeholder="Message Agent Firewall..."
+          placeholder="Message Pangolin..."
           rows="1"
           @keydown.enter.exact.prevent="handleSend"
         ></textarea>

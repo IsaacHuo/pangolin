@@ -1,5 +1,5 @@
 """
-Unit tests for the Agent Firewall core components.
+Unit tests for the Pangolin core components.
 
 Tests cover:
   • L1 Static Analyzer — pattern matching and Base64 decode.

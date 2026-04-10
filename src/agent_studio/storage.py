@@ -7,7 +7,7 @@ import json
 import logging
 from pathlib import Path
 
-logger = logging.getLogger("agent_firewall.agent_studio.storage")
+logger = logging.getLogger("pangolin.agent_studio.storage")
 
 
 class AgentStudioRunStore:

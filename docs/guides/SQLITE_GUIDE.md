@@ -1,4 +1,4 @@
-# SQLite 使用指南 - Agent Firewall
+# SQLite 使用指南 - Pangolin
 
 ## 什么是 SQLite？
 
@@ -12,7 +12,7 @@ SQLite 是一个**嵌入式数据库**，与传统数据库（如 MySQL、Postgr
 | 文件     | 单个 .db 文件 | 多个数据文件     |
 | 适用场景 | 轻量级应用    | 大型多用户系统   |
 
-## Agent Firewall 中的 SQLite
+## Pangolin 中的 SQLite
 
 ### 1. 配置 SQLite 存储
 
@@ -28,7 +28,7 @@ AF_STORAGE_PATH=./data/firewall.db
 
 ### 2. 自动初始化
 
-当你启动 Agent Firewall 后端时，如果选择了 SQLite：
+当你启动 Pangolin 后端时，如果选择了 SQLite：
 
 1. 系统会自动检查数据库文件是否存在
 2. 如果不存在，会自动创建数据库文件和表结构
@@ -36,7 +36,7 @@ AF_STORAGE_PATH=./data/firewall.db
 
 ### 3. 数据库表结构
 
-Agent Firewall 的 SQLite 数据库包含以下表：
+Pangolin 的 SQLite 数据库包含以下表：
 
 ```sql
 -- 轨迹表

@@ -1,5 +1,5 @@
 """
-Storage Backend Abstraction Layer for Agent Firewall.
+Storage Backend Abstraction Layer for Pangolin.
 
 This module provides a unified interface for different storage backends:
 - JSONL: Lightweight, append-only log files (default)

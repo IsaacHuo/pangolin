@@ -5,7 +5,7 @@ from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import StreamingResponse
 from ..app_state import AppState
 
-logger = logging.getLogger("agent_firewall.routes")
+logger = logging.getLogger("pangolin.routes")
 router = APIRouter()
 
 @router.post("/v1/chat/completions")

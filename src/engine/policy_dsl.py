@@ -1,9 +1,9 @@
 """
-Policy DSL Parser and Evaluator for Agent Firewall.
+Policy DSL Parser and Evaluator for Pangolin.
 
 This module implements a simplified policy language for testing security policies
 against traces. The DSL is inspired by Invariant's policy language but simplified
-to work with Agent Firewall's existing L1/L2 analysis results.
+to work with Pangolin's existing L1/L2 analysis results.
 
 Example policies:
 
@@ -32,7 +32,7 @@ import re
 from dataclasses import dataclass
 from typing import Any
 
-logger = logging.getLogger("agent_firewall.policy_dsl")
+logger = logging.getLogger("pangolin.policy_dsl")
 
 
 @dataclass

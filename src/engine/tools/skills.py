@@ -27,7 +27,7 @@ try:
 except Exception:
     yaml = None
 
-logger = logging.getLogger("agent-firewall.skills")
+logger = logging.getLogger("pangolin.skills")
 
 
 def _strip_quoted(value: str) -> str:

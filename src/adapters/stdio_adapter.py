@@ -34,7 +34,7 @@ from ..engine.semantic_analyzer import SemanticAnalyzer
 from ..engine.static_analyzer import StaticAnalyzer
 from .session_manager import SessionManager
 
-logger = logging.getLogger("agent_firewall.stdio")
+logger = logging.getLogger("pangolin.stdio")
 
 # Maximum line size before we forcibly flush (defense against memory exhaustion)
 _MAX_LINE_BYTES = 4 * 1024 * 1024  # 4MB

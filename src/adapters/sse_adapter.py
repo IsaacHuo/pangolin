@@ -44,7 +44,7 @@ from ..engine.static_analyzer import StaticAnalyzer
 from ..models import JsonRpcResponse
 from .session_manager import SessionManager
 
-logger = logging.getLogger("agent_firewall.sse")
+logger = logging.getLogger("pangolin.sse")
 
 
 class SseAdapter:
@@ -127,7 +127,7 @@ class SseAdapter:
                 content=body,
                 headers={
                     "content-type": "application/json",
-                    "x-forwarded-by": "agent-firewall",
+                    "x-forwarded-by": "pangolin",
                 },
             )
 
@@ -195,7 +195,7 @@ class SseAdapter:
             headers={
                 "Cache-Control": "no-cache",
                 "Connection": "keep-alive",
-                "X-Agent-Firewall": "active",
+                "X-Pangolin": "active",
             },
         )
 

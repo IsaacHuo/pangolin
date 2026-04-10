@@ -1,5 +1,5 @@
 /**
- * Agent Firewall — Type Definitions
+ * Pangolin — Type Definitions
  *
  * Centralized type definitions for the security middleware frontend.
  */

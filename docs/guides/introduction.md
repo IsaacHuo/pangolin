@@ -1,4 +1,4 @@
-# Agent Firewall — 项目介绍
+# Pangolin — 项目介绍
 
 ## 面向 AI Agent 通信的零信任安全网关
 
@@ -30,7 +30,7 @@
 
 ### 1.3 本项目的定位
 
-Agent Firewall 的核心理念是 **"永不信任 Agent 的任何输出"** —— 即零信任（Zero-Trust）安全模型。它作为一个**非侵入式的中间人代理（MITM Proxy）**，透明地部署在 Agent 与 Tool Server 之间，对所有 MCP JSON-RPC 通信进行实时拦截、分析和裁决，无需修改 Agent 或 Tool Server 的任何代码。
+Pangolin 的核心理念是 **"永不信任 Agent 的任何输出"** —— 即零信任（Zero-Trust）安全模型。它作为一个**非侵入式的中间人代理（MITM Proxy）**，透明地部署在 Agent 与 Tool Server 之间，对所有 MCP JSON-RPC 通信进行实时拦截、分析和裁决，无需修改 Agent 或 Tool Server 的任何代码。
 
 ---
 
@@ -361,7 +361,7 @@ Frontend (Vue 3)                    Backend (FastAPI)
 
 ### 8.1 双层纵深防御架构
 
-不同于单一的规则引擎或纯 LLM 方案，Agent Firewall 将 **高速模式匹配（L1）** 和 **深度语义理解（L2）** 有机结合：
+不同于单一的规则引擎或纯 LLM 方案，Pangolin 将 **高速模式匹配（L1）** 和 **深度语义理解（L2）** 有机结合：
 
 - L1 以亚毫秒级延迟拦截已知威胁模式
 - L2 以语义理解捕获经过精心伪装的新型攻击
@@ -369,7 +369,7 @@ Frontend (Vue 3)                    Backend (FastAPI)
 
 ### 8.2 协议级透明代理
 
-Agent Firewall 工作在 JSON-RPC 协议层，实现对 Agent 和 Tool Server 的 **完全透明**：
+Pangolin 工作在 JSON-RPC 协议层，实现对 Agent 和 Tool Server 的 **完全透明**：
 
 - 无需修改任何现有代码，即插即用
 - 支持 MCP 全部三种传输协议（SSE、WebSocket、stdio）
@@ -478,4 +478,4 @@ make attack      # 红队攻击模拟
 
 ---
 
-**项目仓库**：https://github.com/IsaacHuo/agent-firewall
+**项目仓库**：https://github.com/IsaacHuo/pangolin

@@ -1,4 +1,4 @@
-# Agent Firewall
+# Pangolin
 
 Zero-Trust Security Gateway for AI Agent Communications — a MITM proxy that intercepts MCP JSON-RPC traffic between AI Agents and Tool Servers using dual-layer analysis (L1 Static + L2 Semantic).
 

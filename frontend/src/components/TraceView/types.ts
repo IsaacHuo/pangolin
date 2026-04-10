@@ -2,7 +2,7 @@
  * TraceView Type Definitions
  *
  * These types define the structure of traces, messages, and annotations
- * compatible with both Agent Firewall and Invariant Explorer formats.
+ * compatible with both Pangolin and Invariant Explorer formats.
  */
 
 export interface TraceMessage {

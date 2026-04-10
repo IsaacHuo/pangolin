@@ -23,7 +23,7 @@ from ..engine.semantic_analyzer import SemanticAnalyzer
 from ..engine.static_analyzer import StaticAnalyzer
 from ..models import ThreatLevel
 
-logger = logging.getLogger("agent_firewall.openai")
+logger = logging.getLogger("pangolin.openai")
 
 
 class OpenAIAdapter:

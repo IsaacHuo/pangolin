@@ -1,5 +1,5 @@
 """
-Core Interceptor — The Heart of the Agent Firewall.
+Core Interceptor — The Heart of the Pangolin.
 
 This module implements `intercept_and_analyze`, the central function
 that every MCP JSON-RPC request passes through. It orchestrates:
@@ -44,7 +44,7 @@ from .agent_scan_integration import AgentScanAnalyzer
 from .semantic_analyzer import L2Result, SemanticAnalyzer
 from .static_analyzer import L1Result, StaticAnalyzer
 
-logger = logging.getLogger("agent_firewall.interceptor")
+logger = logging.getLogger("pangolin.interceptor")
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -412,7 +412,7 @@ async def intercept_and_analyze(
             id=request.id,
             error=JsonRpcError(
                 code=-32001,
-                message="Request blocked by Agent Firewall",
+                message="Request blocked by Pangolin",
                 data={
                     "threat_level": threat_level.value,
                     "reason": reason,
