@@ -1,0 +1,15 @@
+.git
+.github
+.gitignore
+node_modules
+**/node_modules
+.venv
+**/.venv
+.pytest_cache
+**/.pytest_cache
+.vscode
+.DS_Store
+apps/pangolin-frontend/.nuxt
+apps/pangolin-frontend/.output
+logs
+*.log

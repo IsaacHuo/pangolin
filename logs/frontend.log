@@ -1,0 +1,11 @@
+
+  VITE v6.4.1  ready in 1167 ms
+
+  ➜  Local:   http://localhost:9091/
+  ➜  Network: http://172.27.129.206:9091/
+23:06:28 [vite] (client) hmr update /src/App.vue, /src/components/GatewayConfig.vue, /src/components/ChatLab.vue, /src/components/PenTestEval.vue, /src/components/AgentsManager.vue
+23:09:48 [vite] (client) hmr update /src/components/PenTestEval.vue, /src/components/PenTestEval.vue?vue&type=style&index=0&scoped=5cdb59bb&lang.css
+23:09:48 [vite] (client) hmr update /src/components/PenTestEval.vue, /src/components/PenTestEval.vue?vue&type=style&index=0&scoped=5cdb59bb&lang.css
+23:11:23 [vite] (client) hmr update /src/App.vue, /src/App.vue?vue&type=style&index=0&lang.css, /src/App.vue?vue&type=style&index=1&scoped=7a7a37b1&lang.css
+21:01:21 [vite] (client) hmr update /src/App.vue, /src/components/GatewayConfig.vue, /src/components/ChatLab.vue, /src/components/PenTestEval.vue, /src/components/AgentsManager.vue
+21:01:21 [vite] (client) hmr update /src/App.vue, /src/components/GatewayConfig.vue, /src/components/ChatLab.vue, /src/components/PenTestEval.vue, /src/components/AgentsManager.vue

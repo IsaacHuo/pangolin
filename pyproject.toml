@@ -1,0 +1,55 @@
+[project]
+name = "openclaw-agent-firewall"
+version = "2026.2.16"
+description = "Zero-Trust Agent Communication Security Monitoring & Defense System for the OpenClaw ecosystem"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.34.0",
+  "websockets>=14.0",
+  "pydantic>=2.10.0",
+  "aiofiles>=24.1.0",
+  "httpx>=0.28.0",
+  "ahocorasick-rs>=0.22.0",
+  "orjson>=3.10.0",
+  "python-dotenv>=1.2.2",
+  "pyyaml>=6.0.3",
+  "lark-oapi>=1.5.3",
+  "python-socks>=2.8.1",
+  "aiosqlite>=0.20.0",
+  "litellm==1.82.0",
+  "llm-guard==0.3.16",
+  "presidio-analyzer==2.2.358",
+  "presidio-anonymizer==2.2.358",
+  "nemoguardrails==0.20.0",
+  "langgraph==1.0.10",
+  "langfuse==3.14.5",
+]
+
+[tool.uv]
+override-dependencies = [
+  "transformers>=4.53.0",
+  "cryptography>=46.0.5",
+  "pillow>=12.1.1",
+  "presidio-analyzer>=2.2.361",
+  "presidio-anonymizer>=2.2.361",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24.0", "httpx>=0.28.0", "ruff>=0.8.0"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "ASYNC", "S", "B"]
+ignore = ["E402", "E501", "B904", "S101", "S110", "S112", "ASYNC230"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S105", "S106"]

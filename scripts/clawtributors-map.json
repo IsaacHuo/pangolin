@@ -1,0 +1,12 @@
+{
+  "ensureLogins": ["IsaacHuo", "huoweifang2"],
+  "onlyLogins": ["IsaacHuo", "huoweifang2"],
+  "seedCommit": "d6863f87",
+  "placeholderAvatar": "assets/avatar-placeholder.svg",
+  "displayName": {
+    "isaachuo": "IsaacHuo",
+    "huoweifang2": "huoweifang2"
+  },
+  "nameToLogin": {},
+  "emailToLogin": {}
+}

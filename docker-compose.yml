@@ -1,0 +1,30 @@
+services:
+  pangolin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pangolin:local
+    container_name: pangolin
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "9090:9090"
+      - "19001:19001"
+    environment:
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      AF_L2_API_KEY: ${AF_L2_API_KEY:-}
+      AF_LISTEN_HOST: 0.0.0.0
+      AF_LISTEN_PORT: 9090
+      AF_UPSTREAM_HOST: 127.0.0.1
+      AF_UPSTREAM_PORT: 19001
+      AF_TRANSPORT_MODE: websocket
+      OPENCLAW_GATEWAY_PORT: 19001
+      OPENCLAW_GATEWAY_TOKEN: ${OPENCLAW_GATEWAY_TOKEN:-docker-dev-token}
+      NUXT_TELEMETRY_DISABLED: "1"
+      HOST: 0.0.0.0
+      PORT: 3000
+      NUXT_PUBLIC_API_BASE: http://localhost:9090
+      NUXT_PUBLIC_AGENT_API_BASE: http://localhost:9090
+    volumes:
+      - ./audit:/app/audit
+      - ./data:/app/data

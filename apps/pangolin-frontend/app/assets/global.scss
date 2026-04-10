@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+:root {
+  --pangolin-font-family: 'Lora', 'Noto Serif SC', serif;
+  --pangolin-radius: 12px;
+  --pangolin-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --pangolin-shadow-deep: 0 20px 45px rgba(0, 0, 0, 0.16);
+  --pangolin-bg-light: linear-gradient(180deg, #fafafa 0%, #f1f1f1 100%);
+  --pangolin-bg-dark: linear-gradient(180deg, #111111 0%, #181818 100%);
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--pangolin-font-family);
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3,
+.v-toolbar-title {
+  font-family: var(--pangolin-font-family);
+  letter-spacing: 0.01em;
+}
+
+.v-application {
+  font-family: var(--pangolin-font-family);
+  position: relative;
+  background: var(--pangolin-bg-light) !important;
+}
+
+.v-theme--dark.v-application {
+  background: var(--pangolin-bg-dark) !important;
+}
+
+.v-main {
+  background-image: linear-gradient(
+      0deg,
+      rgba(var(--v-theme-on-surface), 0.02),
+      rgba(var(--v-theme-on-surface), 0.02)
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(var(--v-theme-on-surface), 0.02) 0,
+      rgba(var(--v-theme-on-surface), 0.02) 1px,
+      transparent 1px,
+      transparent 16px
+    );
+  background-size: cover, 16px 16px;
+}
+
+.v-navigation-drawer {
+  border-right: 1px solid rgba(var(--v-theme-on-surface), 0.1) !important;
+  background: rgb(var(--v-theme-surface)) !important;
+  backdrop-filter: blur(8px);
+}
+
+.v-app-bar {
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.1) !important;
+  background: color-mix(in srgb, rgb(var(--v-theme-surface)) 94%, rgb(var(--v-theme-background)) 6%) !important;
+  backdrop-filter: blur(10px);
+}
+
+// ── Global input border-radius (12px) ──────────────────────────
+// Applies to all Vuetify outlined / filled / solo inputs:
+// v-text-field, v-textarea, v-select, v-autocomplete, v-combobox, v-file-input
+
+.v-field {
+  border-radius: var(--pangolin-radius) !important;
+}
+
+.v-field__outline {
+  border-radius: var(--pangolin-radius) !important;
+
+  &__start {
+    border-radius: var(--pangolin-radius) 0 0 var(--pangolin-radius) !important;
+  }
+
+  &__end {
+    border-radius: 0 var(--pangolin-radius) var(--pangolin-radius) 0 !important;
+  }
+}
+
+// ── Global v-alert border-radius (12px) ────────────────────────
+.v-alert {
+  border-radius: var(--pangolin-radius) !important;
+}
+
+// ── Global v-data-table border-radius (12px) ───────────────────
+.v-data-table {
+  border-radius: var(--pangolin-radius) !important;
+}
+
+// ── Global v-chip font size (12px) ─────────────────────────────
+.v-chip {
+  font-size: 12px !important;
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.12);
+}
+
+// ── Global v-card-title font size (18px) + margin ──────────────
+.v-card-title {
+  font-size: 18px !important;
+  margin-bottom: 4px !important;
+}
+
+// ── Global v-card border-radius (12px) ─────────────────────────
+.v-card {
+  border-radius: var(--pangolin-radius) !important;
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.08);
+  box-shadow: var(--pangolin-shadow-soft);
+}
+
+// ── Global button border-radius (12px) ─────────────────────────
+.v-btn {
+  border-radius: var(--pangolin-radius) !important;
+}
+
+.v-table thead th {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(var(--v-theme-on-surface), 0.56) !important;
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.1) !important;
+}
+
+.v-table tbody tr:nth-child(even) {
+  background: rgba(var(--v-theme-on-surface), 0.015);
+}
+
+// ── Action button – solid neutral background ────────────────────
+.btn-action {
+  background-color: rgb(var(--v-theme-secondary)) !important;
+  color: rgb(var(--v-theme-on-secondary)) !important;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+
+  &:disabled,
+  &.v-btn--disabled {
+    opacity: 0.5;
+  }
+}
+
+.btn-action--danger {
+  background-color: rgb(var(--v-theme-error)) !important;
+  color: rgb(var(--v-theme-on-primary)) !important;
+
+  &:hover {
+    filter: brightness(1.15);
+  }
+}
+
+// ── Dialog card – subtle white border ──────────────────────────
+.v-dialog > .v-overlay__content > .v-card {
+  border: 1px solid rgba(var(--v-theme-on-surface), 0.12) !important;
+  box-shadow: var(--pangolin-shadow-deep) !important;
+}
+
+// ── Active parent row highlight when expanded ──────────────────
+.v-data-table tbody > tr:has(+ tr .detail-row) {
+  background: rgba(var(--v-theme-primary), 0.04) !important;
+}
+
+.transparent-page {
+  background: transparent !important;
+}

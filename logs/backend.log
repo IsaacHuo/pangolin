@@ -1,0 +1,218 @@
+INFO:     Will watch for changes in these directories: ['/Users/yingwu/main/projects/agent-firewall/extensions/agent-firewall']
+INFO:     Uvicorn running on http://127.0.0.1:9090 (Press CTRL+C to quit)
+INFO:     Started reloader process [53364] using WatchFiles
+INFO:     Started server process [53375]
+INFO:     Waiting for application startup.
+2026-03-15T22:52:25 [INFO] agent_firewall.agent_scan: Agent-Scan integration disabled
+2026-03-15T22:52:25 [INFO] agent_firewall.storage.jsonl: JsonlStorage initialized at data
+2026-03-15T22:52:25 [INFO] agent_firewall.session: Session manager started (buffer=64, ttl=3600s)
+2026-03-15T22:52:25 [INFO] agent_firewall.audit: Audit logger started → audit/firewall.jsonl
+2026-03-15T22:52:25 [INFO] agent_firewall.storage.jsonl: JsonlStorage initialized at data
+2026-03-15T22:52:25 [INFO] agent_firewall: JsonlStorage initialized at ./data
+2026-03-15T22:52:25 [WARNING] agent-firewall.skills: Bad YAML in /Users/yingwu/main/projects/agent-firewall/skills/food-order/SKILL.md: mapping values are not allowed here
+  in "<unicode string>", line 2, column 125:
+     ... explicit user approval. Triggers: order food, reorder, track ETA.
+                                         ^
+2026-03-15T22:52:25 [INFO] agent-firewall.skills: Skills discovered: 49 total, 21 ready (apple-notes, apple-reminders, bluebubbles, coding-agent, discord, gog, healthcheck, notion, openai-image-gen, openai-whisper-api, session-logs, sherpa-onnx-tts, skill-creator, slack, spotify-player, summarize, things-mac, trello, video-frames, voice-call, weather)
+2026-03-15T22:52:25 [INFO] agent-firewall.gateway-tools: Gateway tools discovered: 19 (agents_list, browser, canvas, cron, gateway, image, memory_get, memory_search, message, nodes, session_status, sessions_history, sessions_list, sessions_send, sessions_spawn, subagents, tts, web_fetch, web_search)
+2026-03-15T22:52:25 [INFO] agent_firewall: 🛡️  Agent Firewall started on 127.0.0.1:9090 → upstream 127.0.0.1:18789
+INFO:     Application startup complete.
+INFO:     127.0.0.1:55540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55557 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55557 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55585 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55587 - "OPTIONS /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55588 - "OPTIONS /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55589 - "OPTIONS /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55590 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55585 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55587 - "GET /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55588 - "GET /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55595 - "WebSocket /ws/dashboard" [accepted]
+2026-03-15T22:52:44 [INFO] agent_firewall.dashboard: Dashboard client connected: 4583964496 (total: 1)
+INFO:     connection open
+INFO:     127.0.0.1:55589 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55589 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55589 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55589 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55589 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55646 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     connection closed
+2026-03-16T06:52:18 [INFO] agent_firewall.dashboard: Dashboard client disconnected: 4583964496 (total: 0)
+INFO:     127.0.0.1:57309 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57323 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T06:52:18 [INFO] agent_firewall.dashboard: Dashboard client connected: 4583954032 (total: 1)
+INFO:     connection open
+INFO:     127.0.0.1:57309 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "OPTIONS /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57325 - "OPTIONS /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57325 - "GET /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57326 - "OPTIONS /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     connection closed
+2026-03-16T06:52:19 [INFO] agent_firewall.dashboard: Dashboard client disconnected: 4583954032 (total: 0)
+INFO:     127.0.0.1:57325 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57326 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57332 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T06:52:19 [INFO] agent_firewall.dashboard: Dashboard client connected: 4584392464 (total: 1)
+INFO:     127.0.0.1:57333 - "GET /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57334 - "GET /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     127.0.0.1:57342 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T06:52:22 [INFO] agent_firewall.dashboard: Dashboard client connected: 4584398944 (total: 2)
+INFO:     connection open
+INFO:     127.0.0.1:57343 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T06:52:22 [INFO] agent_firewall.dashboard: Dashboard client connected: 4585786928 (total: 3)
+INFO:     connection open
+INFO:     127.0.0.1:56686 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56686 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56705 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63796 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63796 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63811 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56544 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56544 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56554 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49369 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49369 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56892 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56892 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64988 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64988 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56869 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56869 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49350 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49350 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56125 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56125 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64575 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64575 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56035 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56035 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63971 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63971 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54673 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54673 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63749 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63749 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56313 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56313 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63862 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63862 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54797 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54797 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63722 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63722 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     connection closed
+2026-03-16T21:02:42 [INFO] agent_firewall.dashboard: Dashboard client disconnected: 4584392464 (total: 2)
+INFO:     127.0.0.1:54527 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54570 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T21:02:42 [INFO] agent_firewall.dashboard: Dashboard client connected: 4585783376 (total: 3)
+INFO:     connection open
+INFO:     127.0.0.1:54527 - "OPTIONS /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54572 - "OPTIONS /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54572 - "GET /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "OPTIONS /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54572 - "GET /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     connection closed
+2026-03-16T21:02:42 [INFO] agent_firewall.dashboard: Dashboard client disconnected: 4585783376 (total: 2)
+INFO:     127.0.0.1:54527 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54572 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54575 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T21:02:42 [INFO] agent_firewall.dashboard: Dashboard client connected: 4585789760 (total: 3)
+INFO:     127.0.0.1:54576 - "GET /api/config HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     127.0.0.1:54577 - "GET /api/rules HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54578 - "GET /api/audit?limit=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54586 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T21:02:45 [INFO] agent_firewall.dashboard: Dashboard client connected: 4585975696 (total: 4)
+INFO:     connection open
+INFO:     127.0.0.1:54587 - "WebSocket /ws/dashboard" [accepted]
+2026-03-16T21:02:45 [INFO] agent_firewall.dashboard: Dashboard client connected: 4584394144 (total: 5)
+INFO:     connection open
+INFO:     127.0.0.1:58365 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58366 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58367 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58368 - "GET /api/gateway-info HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58369 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58370 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58365 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58366 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58367 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58605 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64966 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64966 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54114 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54114 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63293 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50927 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50927 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55945 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55945 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51667 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51667 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63669 - "GET /api/mcp/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63697 - "GET /api/mcp/tools HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63745 - "POST /api/benchmark/run HTTP/1.1" 200 OK
+2026-03-17T07:45:25 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:64260 - "POST /api/benchmark/run HTTP/1.1" 200 OK
+2026-03-17T07:47:38 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-17T07:49:12 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-17T07:49:41 [INFO] agent_firewall.l2: L2 result: injection=True confidence=0.95 method=chat/completions
+2026-03-17T07:49:42 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-03-17T07:49:42 [ERROR] agent_firewall: Benchmark pipeline failed: Judge model failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"deepseek/deepseek-v3.2-speciale is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"AtlasCloud","is_by
+Traceback (most recent call last):
+  File "/Users/yingwu/main/projects/agent-firewall/extensions/agent-firewall/src/main.py", line 3057, in _stream
+    scores = await _benchmark_score_case_with_judge(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yingwu/main/projects/agent-firewall/extensions/agent-firewall/src/main.py", line 2402, in _benchmark_score_case_with_judge
+    raise ValueError(f"Judge model failed: {judge_error}")
+ValueError: Judge model failed: HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"deepseek/deepseek-v3.2-speciale is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations","provider_name":"AtlasCloud","is_by
+INFO:     127.0.0.1:64952 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64952 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65448 - "POST /api/chat/send HTTP/1.1" 200 OK
+2026-03-17T07:54:51 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-03-17T07:55:03 [INFO] agent_firewall.l2: L2 result: injection=False confidence=0.99 method=chat/completions
+INFO:     127.0.0.1:53176 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53176 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61495 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61495 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50445 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50445 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55776 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55776 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60746 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60746 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50605 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50605 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56135 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56135 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62562 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62562 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52927 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52927 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58603 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58603 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63982 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63982 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61576 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61576 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51877 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51877 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60731 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60731 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50679 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50679 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57519 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57519 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63027 - "OPTIONS /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63027 - "GET /api/stats HTTP/1.1" 200 OK

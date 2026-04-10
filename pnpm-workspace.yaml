@@ -1,0 +1,13 @@
+packages:
+  - .
+  - apps/*
+  - extensions/*
+
+onlyBuiltDependencies:
+  - "@lydell/node-pty"
+  - "@napi-rs/canvas"
+  - authenticate-pam
+  - esbuild
+  - node-llama-cpp
+  - protobufjs
+  - sharp

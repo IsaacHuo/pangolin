@@ -1,0 +1,51 @@
+name: ci
+
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+
+jobs:
+    test-and-build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 22
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: 10
+
+            - name: Setup Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Setup uv
+              uses: astral-sh/setup-uv@v5
+
+            - name: Install dependencies
+              run: |
+                  pnpm install --frozen-lockfile
+                  uv sync --frozen
+
+            - name: Run checks
+              run: |
+                  pnpm check
+                  pnpm test:fast
+                  make test
+
+            - name: Build web and cli artifacts
+              run: |
+                  pnpm build
+                  NUXT_TELEMETRY_DISABLED=1 pnpm pangolin:frontend:build
+
+            - name: Build Docker image
+              run: docker build -t pangolin:ci .
