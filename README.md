@@ -103,10 +103,6 @@ docker compose ps
 docker compose logs -f
 ```
 
-## ⚠️ 关于 "Agent Firewall" 历史命名
-
-本项目历史上也曾探索名为 `Agent Firewall` 并在 `frontend/` 开发了一套原生 Vue SPA 面板。目前系统已全线更名为 **Pangolin** 并将前端重心切流至 `apps/pangolin-frontend/`。
-
 ## 📄 License
 
 MIT

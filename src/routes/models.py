@@ -26,6 +26,11 @@ OPENROUTER_MODELS: list[dict[str, str]] = [
         "name": "GPT-4o mini (via OpenRouter)",
     },
     {
+        "id": "qwen/qwen3.6-plus",
+        "provider": "openrouter",
+        "name": "Qwen 3.6 Plus (via OpenRouter)",
+    },
+    {
         "id": "anthropic/claude-3.7-sonnet",
         "provider": "openrouter",
         "name": "Claude 3.7 Sonnet (via OpenRouter)",

@@ -286,7 +286,7 @@ export async function handleToolsInvokeHttpRequest(
   const gatewayDenySet = new Set(gatewayDenyNames);
   const gatewayFiltered = subagentFiltered.filter((t) => !gatewayDenySet.has(t.name));
 
-  const tool = gatewayFiltered.find((t) => t.name === toolName);
+  console.log("Filtered tools:", gatewayFiltered.map(t => t.name)); const tool = gatewayFiltered.find((t) => t.name === toolName);
   if (!tool) {
     sendJson(res, 404, {
       ok: false,

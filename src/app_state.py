@@ -14,6 +14,8 @@ from .adapters.openai_adapter import OpenAIAdapter
 from .adapters.session_manager import SessionManager
 from .models import DashboardEvent, AuditEntry
 
+from src.utils.shared import _direction_from_message, _state
+
 logger = logging.getLogger("pangolin")
 
 

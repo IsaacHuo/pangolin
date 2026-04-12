@@ -1,14 +1,15 @@
 from fastapi import APIRouter, Request, HTTPException
 from typing import Any
 import os
-from ..models import FirewallConfig
-from ..main import _state
-
-from ..main import (
+from ..config import FirewallConfig
+from ..app_state import _state
+from ..gateway.discovery import (
     DEFAULT_GATEWAY_PORT,
     _read_gateway_info_from_local_config,
     _resolve_gateway_runtime_port,
     _first_non_empty_env,
+)
+from ..utils.shared import (
     _get_gateway_auth,
     _probe_gateway_auth,
     _normalize_custom_mcp_servers
@@ -132,3 +133,12 @@ async def patch_config(request: Request) -> dict[str, Any]:
         "audit_log_path": c.audit_log_path,
         "blocked_commands": sorted(list(c.blocked_commands)),
     }
+
+
+from fastapi.responses import JSONResponse
+from ..utils.shared import _load_custom_config
+
+@router.get("/api/custom-config")
+async def get_custom_config() -> JSONResponse:
+    """Return all custom MCP servers and skills."""
+    return JSONResponse(_load_custom_config())

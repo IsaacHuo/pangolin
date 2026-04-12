@@ -2,7 +2,7 @@
   <div class="chat-input">
     <v-textarea
       v-model="text"
-      :disabled="disabled"
+      :disabled="disabled && !isStreaming"
       placeholder="Try a prompt injection, data leak, or jailbreak…"
       variant="outlined"
       rows="1"
@@ -18,6 +18,17 @@
       </template>
       <template #append-inner>
         <v-btn
+          v-if="isStreaming"
+          icon="mdi-stop"
+          variant="flat"
+          size="small"
+          color="error"
+          @click="$emit('abort')"
+        >
+          <v-tooltip activator="parent" location="top">Stop generating</v-tooltip>
+        </v-btn>
+        <v-btn
+          v-else
           icon="mdi-send"
           variant="text"
           size="small"
@@ -34,10 +45,12 @@ import { ref } from 'vue'
 
 defineProps<{
   disabled?: boolean
+  isStreaming?: boolean
 }>()
 
 const emit = defineEmits<{
   send: [text: string]
+  abort: []
 }>()
 
 const text = ref('')

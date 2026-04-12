@@ -10,27 +10,30 @@ import uuid
 import mimetypes
 from datetime import datetime, timezone
 from pathlib import Path
-from ..models import DashboardEvent, AuditEntry
-from ..main import _state, _direction_from_message
-
-from ..main import (
-    DEFAULT_GATEWAY_PORT,
+from src.models import DashboardEvent, AuditEntry, AnalysisResult, ThreatLevel, Verdict
+from ..app_state import _state
+from ..utils.shared import (
     _HTTP_ACCESS_RE,
     _WS_ACCESS_RE,
     _CONNECTION_STATE_RE,
     _APP_LOG_RE,
     _ALLOWED_EXTENSIONS,
-    _read_gateway_info_from_local_config,
-    _resolve_gateway_runtime_port,
-    _first_non_empty_env,
+    _direction_from_message,
     _get_gateway_auth,
     _probe_gateway_auth,
     _tavily_web_search,
     _normalize_custom_mcp_servers,
     _invoke_custom_mcp_server,
-    _get_skill_registry,
-    _get_gateway_tool_registry
 )
+from ..gateway.discovery import (
+    DEFAULT_GATEWAY_PORT,
+    _read_gateway_info_from_local_config,
+    _resolve_gateway_runtime_port,
+    _first_non_empty_env,
+)
+from ..engine.tools.skills import get_skill_registry as _get_skill_registry
+from ..engine.tools.gateway_tools import get_gateway_tool_registry as _get_gateway_tool_registry
+
 from ..engine.tools.gateway_tools import GatewayToolRegistry
 
 from fastapi.responses import JSONResponse
@@ -441,7 +444,6 @@ async def chat_send(request: Request):
 
     async def _event_stream():
         """Async generator yielding NDJSON lines."""
-        from .models import AnalysisResult, AuditEntry, DashboardEvent, ThreatLevel, Verdict
 
         def _extract_text(content: Any) -> str:
             if isinstance(content, str):

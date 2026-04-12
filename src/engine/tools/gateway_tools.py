@@ -39,8 +39,8 @@ class GatewayToolRegistry:
 
     def __init__(self, tools_source_dir: str | Path | None = None) -> None:
         if tools_source_dir is None:
-            repo_root = Path(__file__).resolve().parent.parent
-            tools_source_dir = repo_root / "src" / "agents" / "tools"
+            repo_root = Path(__file__).resolve().parent.parent.parent.parent
+            tools_source_dir = repo_root / "node-host" / "src" / "agents" / "tools"
         self._source_dir = Path(tools_source_dir)
         self._tools: dict[str, GatewayToolDef] = {}
 

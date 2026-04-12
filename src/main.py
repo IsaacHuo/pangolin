@@ -173,6 +173,12 @@ from src.routes.models import router as models_router
 from src.routes.policies import router as policies_router
 from src.routes.scenarios import router as scenarios_router
 from src.routes.trace import router as trace_router
+from src.routes.dashboard_routes import router as dashboard_router
+from src.routes.config_routes import router as config_router
+from src.routes.rules_routes import router as rules_router
+from src.routes.benchmarks import router as benchmarks_router
+from src.routes.mcp_gateway import router as mcp_gateway_router
+from src.routes.openai_gateway import router as openai_gateway_router
 
 app.include_router(dataset_router)
 app.include_router(trace_router)
@@ -181,6 +187,12 @@ app.include_router(models_router)
 app.include_router(policies_router)
 app.include_router(analytics_router)
 app.include_router(agent_studio_router)
+app.include_router(dashboard_router)
+app.include_router(config_router)
+app.include_router(rules_router)
+app.include_router(benchmarks_router)
+app.include_router(mcp_gateway_router)
+app.include_router(openai_gateway_router)
 
 
 def _state(request: Request | None = None) -> AppState:

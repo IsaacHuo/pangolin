@@ -50,7 +50,9 @@
         <playground-chat-input
           ref="chatInputRef"
           :disabled="isStreaming"
+          :is-streaming="isStreaming"
           @send="handleManualSend"
+          @abort="_abort"
         />
       </div>
 

@@ -4,6 +4,9 @@ from typing import Any
 from fastapi import APIRouter, Request, HTTPException
 from fastapi.responses import StreamingResponse
 from ..app_state import AppState
+from ..utils.shared import _state, _build_custom_gateway_tools
+from ..engine.tools.gateway_tools import get_gateway_tool_registry as _get_gateway_tool_registry
+from ..engine.tools.skills import get_skill_registry as _get_skill_registry
 
 logger = logging.getLogger("pangolin.routes")
 router = APIRouter()

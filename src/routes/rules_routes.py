@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, HTTPException
 from typing import Any
 import time
 
-from ..main import _state
+from ..utils.shared import _state
 
 import logging
 from fastapi.responses import JSONResponse

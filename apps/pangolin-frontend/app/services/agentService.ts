@@ -166,7 +166,8 @@ export const agentService = {
     }
 
     const decision = normalizeDecision(parsed.analysis?.verdict)
-    const riskScore = Number(parsed.analysis?.l2_confidence ?? 0)
+    let rawConfidence = Number(parsed.analysis?.l2_confidence ?? 0)
+    const riskScore = decision === 'ALLOW' ? Math.max(0, 1.0 - rawConfidence) : rawConfidence
     const blockedReason = parsed.analysis?.blocked_reason ?? null
     const intent = parsed.analysis?.l2_reasoning || 'unknown'
 
