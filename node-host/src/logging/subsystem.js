@@ -36,7 +36,7 @@ const SUBSYSTEM_COLORS = ["cyan", "green", "yellow", "blue", "magenta", "red"];
 const SUBSYSTEM_COLOR_OVERRIDES = {
     "gmail-watcher": "blue",
 };
-const SUBSYSTEM_PREFIXES_TO_DROP = ["gateway", "channels", "providers"];
+const SUBSYSTEM_PREFIXES_TO_DROP = new Set(["gateway", "channels", "providers"]);
 const SUBSYSTEM_MAX_SEGMENTS = 2;
 const CHANNEL_SUBSYSTEM_PREFIXES = new Set(CHAT_CHANNEL_ORDER);
 function pickSubsystemColor(color, subsystem) {
@@ -56,7 +56,7 @@ function formatSubsystemForConsole(subsystem) {
     const parts = subsystem.split("/").filter(Boolean);
     const original = parts.join("/") || subsystem;
     while (parts.length > 0 &&
-        SUBSYSTEM_PREFIXES_TO_DROP.includes(parts[0])) {
+        SUBSYSTEM_PREFIXES_TO_DROP.has(parts[0])) {
         parts.shift();
     }
     if (parts.length === 0) {
